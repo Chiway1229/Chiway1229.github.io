@@ -7,7 +7,9 @@
     <link rel = "stylesheet" href = "mystyle.css">
   </head>
   <body>
+    <!--在p的第一個字與整個句子套上特效-->
     <p>Welcome to my website!</p>
+    <!--對h2整個句子套上特效-->
     <h2>以下是台幣匯率計算機</p>
     <h2>輸入台幣金額可以幫您計算出5種貨幣匯率</p>
     <h5>取到小數點後第2位</h5>
@@ -30,16 +32,16 @@
 		const xmlDoc = xml.responseXML;
 		const x = xmlDoc.getElementsByTagName("Currency");
                 const input = document.getElementById("NTD").value;
-		let table = "<tr><th>貨幣種類</th><th>匯率</th><th>價值</th></tr>";
+		let table = "<tr><th>貨幣種類</th><th> 匯率 </th><th> 價值 </th></tr>";
 		
 		for (let i = 0; i < x.length ; i++){
-			table += "<tr><td>"+
+			table += "<tr><td> "+
 			x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue+
-			"</td><td>"+
+			" </td><td> "+
 			x[i].getElementsByTagName("Value")[0].childNodes[0].nodeValue+
-			"</td><td>"+
+			" </td><td> "+
 			(x[i].getElementsByTagName("Value")[0].childNodes[0].nodeValue * input).toFixed(2)+
-			"</td></tr>";
+			" </td></tr> ";
 		}
 		document.getElementById("table").innerHTML = table;
        }  
@@ -47,7 +49,7 @@
 		
        }
     </script>
-    <!-- 滑鼠移到網頁最下方的ref會有 hover 的特效-->
+    <!-- 滑鼠移到網頁最下方的ref會有hover特效-->
     <div class="ref">
       <!-- 特效設定在css裡，當<br>時可以呈現20px行距-->
       以上內容由110403015劉浩倫提供 <br>
