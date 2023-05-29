@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<TABLE>
+	<Currency>
+		<Name>美金</Name>
+		<Value>30.295</Value>
+	</Currency>
+	<Currency>
+		<Name>歐元</Name>
+		<Value>32.12</Value>
+	</Currency>
+	<Currency>
+		<Name>日幣</Name>
+		<Value>0.2091</Value>
+	</Currency>
+	<Currency>
+		<Name>韓元</Name>
+		<Value>0.02145</Value>
+	</Currency>
+	<Currency>
+		<Name>澳幣</Name>
+		<Value>19.69</Value>
+	</Currency>
+</TABLE>
