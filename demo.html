@@ -16,9 +16,13 @@
     
     <input id="NTD" type="number">
     <button onclick = "loadDoc()">轉換</button>
+    <button onclick = "reset()">重置</button>
     <br>
     <table id = "table"> </table>
     <script>
+       if (document.getElementById("NTD").value < 0 ){
+       		alert('請不要輸入負數!');
+       }
        function loadDoc() {
 		const xhttp = new XMLHttpRequest();
 		xhttp.onload = function() {
@@ -45,8 +49,9 @@
 		}
 		document.getElementById("table").innerHTML = table;
        }  
-       function restart(){
-		
+       function reset(){
+		document.getElementById("NTD").value = 0;
+	        currency(this);
        }
     </script>
     <!-- 滑鼠移到網頁最下方的ref會有hover特效-->
