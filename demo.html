@@ -17,12 +17,13 @@
     
     <input id="NTD" type="number">
     <button onclick = "loadDoc()">轉換</button>
+    <!--重置按鈕按下去後再按轉換才會進行重置 避免誤觸-->
     <button onclick = "reset()">重置</button>
     <br>
     <table id = "table"> </table>
     <script>
        <!--具備輸入檢查功能，若使用者輸入的內容非有效數值，按下執行計算的按鈕後會跳出警告，並觸發重新開始(reset)功能 -->
-       if (document.getElementById("NTD").value < 0 ){
+       if (const input = document.getElementById("NTD").value < 0 ){
        		alert('請不要輸入負數!');
 	       	reset();
        }
