@@ -24,6 +24,7 @@
        <!--具備輸入檢查功能，若使用者輸入的內容非有效數值，按下執行計算的按鈕後會跳出警告，並觸發重新開始(reset)功能 -->
        if (document.getElementById("NTD").value < 0 ){
        		alert('請不要輸入負數!');
+	       	reset();
        }
        <!--創建一個名稱為 "rate.xml" 的檔案並以 XML 格式儲存匯率 -->
        function loadDoc() {
@@ -54,7 +55,7 @@
        }  
        function reset(){
 		document.getElementById("NTD").value = 0;
-	        currency(this);
+	        loadDoc();
        }
     </script>
     <!-- 滑鼠移到網頁最下方的ref會有hover特效-->
