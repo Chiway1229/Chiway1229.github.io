@@ -32,14 +32,14 @@
 		const xmlDoc = xml.responseXML;
 		const x = xmlDoc.getElementsByTagName("Currency");
                 const input = document.getElementById("NTD").value;
-		let table = "<tr><th>貨幣種類</th><th> 匯率 </th><th> 價值 </th></tr>";
+		let table = "<tr><th>貨幣種類 </th><th> 匯率 </th><th> 價值 </th></tr>";
 		
 		for (let i = 0; i < x.length ; i++){
 			table += "<tr><td> "+
 			x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue+
-			" </td><td> "+
+			"  </td><td> "+
 			x[i].getElementsByTagName("Value")[0].childNodes[0].nodeValue+
-			" </td><td> "+
+			"  </td><td> "+
 			(x[i].getElementsByTagName("Value")[0].childNodes[0].nodeValue * input).toFixed(2)+
 			" </td></tr> ";
 		}
