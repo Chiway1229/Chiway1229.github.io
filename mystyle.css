@@ -1,0 +1,24 @@
+h5 {
+	background-color : black;
+	color: white;
+}
+
+div.ref:hover {
+    background-color: #1F4E7A;
+    color: white;
+    line-height: 20px;
+}
+
+div.ref {
+    text-align: center;
+    line-height: 20px;
+}
+
+p::first-letter{
+	color: blue;
+	font-size: 200%;
+}
+
+p::first-line {
+	color: red;
+}
