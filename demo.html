@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>台幣匯率計算</title>
+    <meta charset = "UTF-8">
+  </head>
+  <body>
+    <p>以下是台幣匯率計算機</p>
+    <p>輸入台幣金額可以幫您計算出5種貨幣匯率</p>
+    <h5>取到小數點後第2位</h5>
+    
+    <input id="NTD" type="number">
+    <button onclick = "loadDoc()">轉換</button>
+    <br>
+	<table id = "table"> </table>
+    <script>
+	  function loadDoc() {
+		const xhttp = new XMLHttpRequest();
+		xhttp.onload = function() {
+			currency(this);
+		}
+		xhttp.open("GET", "./rare.xml");
+		xhttp.send();
+	  }
+	  
+      function currency(xml){ 
+		const xmlDoc = xml.responseXML;
+		const x = xmlDoc.getElementsByTagName("Currency");
+        const input = document.getElementById("NTD").value;
+		let table = "<tr><th>貨幣種類</th><th>匯率</th><th>價值</th></tr>";
+		
+		for (let i = 0; i < x.length ; i++){
+			table += "<tr><td>"+
+			x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue+
+			"</td><td>"+
+			x[i].getElementsByTagName("Value")[0].childNodes[0].nodeValue+
+			"</td><td>"+
+			(x[i].getElementsByTagName("Value")[0].childNodes[0].nodeValue * input).toFixed(2)+
+			"</td></tr>";
+		}
+		document.getElementById("table").innerHTML = table;
+      }
+	  
+	  function restart(){
+		
+	  }
+    </script>
+  </body>
+</html>
