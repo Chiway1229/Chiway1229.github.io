@@ -4,30 +4,32 @@
   <head>
     <title>台幣匯率計算</title>
     <meta charset = "UTF-8">
+    <link rel = "stylesheet" href = "mystyle.css">
   </head>
   <body>
-    <p>以下是台幣匯率計算機</p>
-    <p>輸入台幣金額可以幫您計算出5種貨幣匯率</p>
+    <p>Welcome to my website!</p>
+    <h2>以下是台幣匯率計算機</p>
+    <h2>輸入台幣金額可以幫您計算出5種貨幣匯率</p>
     <h5>取到小數點後第2位</h5>
     
     <input id="NTD" type="number">
     <button onclick = "loadDoc()">轉換</button>
     <br>
-	<table id = "table"> </table>
+    <table id = "table"> </table>
     <script>
-	  function loadDoc() {
+       function loadDoc() {
 		const xhttp = new XMLHttpRequest();
 		xhttp.onload = function() {
 			currency(this);
 		}
 		xhttp.open("GET", "./rare.xml");
 		xhttp.send();
-	  }
+       }
 	  
-      function currency(xml){ 
+       function currency(xml){ 
 		const xmlDoc = xml.responseXML;
 		const x = xmlDoc.getElementsByTagName("Currency");
-        const input = document.getElementById("NTD").value;
+                const input = document.getElementById("NTD").value;
 		let table = "<tr><th>貨幣種類</th><th>匯率</th><th>價值</th></tr>";
 		
 		for (let i = 0; i < x.length ; i++){
@@ -40,11 +42,16 @@
 			"</td></tr>";
 		}
 		document.getElementById("table").innerHTML = table;
-      }
-	  
-	  function restart(){
+       }  
+       function restart(){
 		
-	  }
+       }
     </script>
+    <!-- 滑鼠移到網頁最下方的ref會有 hover 的特效-->
+    <div class="ref">
+      <!-- 特效設定在css裡，當<br>時可以呈現20px行距-->
+      以上內容由110403015劉浩倫提供 <br>
+      僅供學術使用<br>
+    </div>
   </body>
 </html>
