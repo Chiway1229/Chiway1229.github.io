@@ -4,6 +4,7 @@
   <head>
     <title>台幣匯率計算</title>
     <meta charset = "UTF-8">
+    <!--網頁中使用了 5 種不同的 CSS 語法所設計的特效，相關語法敘述皆須置於名稱為 "mystyle.css" 的檔案中-->
     <link rel = "stylesheet" href = "mystyle.css">
   </head>
   <body>
@@ -20,9 +21,11 @@
     <br>
     <table id = "table"> </table>
     <script>
+       <!--具備輸入檢查功能，若使用者輸入的內容非有效數值，按下執行計算的按鈕後會跳出警告，並觸發重新開始(reset)功能 -->
        if (document.getElementById("NTD").value < 0 ){
        		alert('請不要輸入負數!');
        }
+       <!--創建一個名稱為 "rate.xml" 的檔案並以 XML 格式儲存匯率 -->
        function loadDoc() {
 		const xhttp = new XMLHttpRequest();
 		xhttp.onload = function() {
